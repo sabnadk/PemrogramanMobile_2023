@@ -1,0 +1,104 @@
+Nama    : Sabna Devi Kumalasari
+NIM     : 2141720009
+
+1. Silakan selesaikan Praktikum 1 sampai 5, lalu dokumentasikan berupa screenshot hasil pekerjaan Anda beserta penjelasannya!
+2. Jelaskan yang dimaksud Functions dalam bahasa Dart!
+    Jawab: Dalam bahasa Dart, function adalah blok kode yang dapat dieksekusi berulang kali untuk menyelesaikan tugas tertentu dan memungkinkan untuk mengorganisasi kode ke dalam bagian-bagian yang dapat digunakan kembali.
+3. Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya!
+    Jawab:
+    - Required Parameters: parameter yang harus disertakan ketika memanggil fungsi
+        
+        void printName(String name) {
+        print(name);
+        }
+
+    - Optional Parameters: parameter yang dpaat dipilih atau tidak saat memanggil fungsi
+        
+        void greet(String name, {String? greeting = 'Hello'}) {
+        print('$greeting, $name!');
+        }
+    
+    - Positional Parameters: parameter yang disertakan berdasarkan urutan posisinya dalam daftar parameter fungsi
+    
+        void printNumbers(int a, int b, int c) {
+        print('$a, $b, $c');
+        }
+    
+    - Default Parameter Values: memberikan nilai default untuk parameter opsional jika parameter tersebut tidak disertakan saat memanggil fungsi
+
+        void greet(String name, {String greeting = 'Hello'}) {
+        print('$greeting, $name!');
+        }
+
+4. Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+    Jawab: dalam Dart, functions dianggap sebagai first-class objects, yang berarti dapat disimpan dalam variabel, dilewatkan sebagai argumen ke fungsi lain, dikembalikan dari fungsi lain. contoh sintaks
+    
+    void main(){
+        Function greet = Hello;
+    }
+
+5. Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+    Jawab: Anonymous function dalam Dart adalah fungsi yang tidak memiliki nama dan berguna ketika ingin membuat fungsi sederhana tanpa harus memberikannya nama atau mendefinisikannya secara terpisah. contoh:
+
+    void main(){
+    var numbers = [1, 2, 3, 4, 5];
+    numbers.forEach((number) {
+        print(number * 2);
+    });
+    }
+
+6. Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
+    Jawab:
+    Lexical scope menentukan apa yang dapat diakses oleh sebuah fungsi berdasarkan struktur kode sumber, sedangkan Lexical  Closures memungkinkan fungsi untukmengakses variabel-variabel dari scope yang lebih tinggi bahkan setelah fungsi tersebut keluar dari scope tersebut. Closures berguna ketika ingin menyimpan dna mengakses nilai-nilai yang relevan dari scope yang lebih tinggi di dalam fungsi.
+    - Contoh Lexical Scope:
+
+    void main() {
+    var x = 10;
+    void innerFunction() {
+    print(x); // Lexical scope memungkinkan mengakses x di sini.
+    }
+    innerFunction();
+    }
+
+    - Contoh Lexical Closures:
+    
+    Function createClosure(int x) {
+    return () {
+    print(x); // Lexical closure memungkinkan mengakses x di sini meskipun sudah keluar dari scope createClosure.
+    };
+    }
+
+    void main() {
+    var closure = createClosure(20);
+    closure(); // Output: 20
+    }
+
+7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
+    Jawab: Dalam Dart, return multiple value dari sebuah fungsi tidak secara eksplisit didukung seperti dalam beberapa bahasa pemrograman lain yang memiliki tipe data khusus untuk tuple atau struktur data yang dapat menyimpan beberapa nilai. Dalam Dart, Anda dapat membuat return multiple value dalam sebuah fungsi dengan menggunakan koleksi seperti List atau Map. Contoh:
+
+    List<int> getMinMax(List<int> numbers) {
+    int min = numbers[0];
+    int max = numbers[0];
+  
+    for (int num in numbers) {
+    if (num < min) {
+      min = num;
+    }
+    if (num > max) {
+      max = num;
+        }
+    }
+  
+    return [min, max];
+    }
+
+    void main() {
+    List<int> numbers = [5, 2, 8, 1, 9, 4];
+    var result = getMinMax(numbers);
+    print('Minimum: ${result[0]}, Maximum: ${result[1]}');
+    }
+
+    Pada contoh di atas, fungsi getMinMax mengembalikan List yang berisi dua nilai, yaitu nilai minimum dan nilai maksimum dari list angka yang diberikan. Nilai-nilai tersebut kemudian dapat diakses melalui indeks pada List hasil return.
+
+8. Kumpulkan berupa link commit repo GitHub pada tautan yang telah disediakan di grup Telegram!
+
